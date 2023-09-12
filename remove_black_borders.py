@@ -17,19 +17,19 @@ class BorderAnalyzer:
         if img is None:
             print("Image not found.")
             return None, None
-
+        # Convert to Grayscale in oder to simplify image processing
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         h, w = gray.shape
 
         left_border = 0
         right_border = w - 1
-
+        # Find left border
         for i in range(w):
             col = gray[:, i]
             if np.mean(col) > self.white_threshold:
                 left_border = i
                 break
-
+        # Find right border
         for i in range(w - 1, -1, -1):
             col = gray[:, i]
             if np.mean(col) > self.white_threshold:
@@ -39,14 +39,15 @@ class BorderAnalyzer:
         return left_border, right_border
 
 class ImageCropper:
-    def crop_image(self, img_path, left, right, output_folder, target_width=None, target_height=None):
+    def crop_image(self, img_path, left_border, right_border, output_folder, target_width=None, target_height=None):
         img = cv2.imread(img_path)
         if img is None:
             with print_lock:
                 print("Image not found.")
             return
 
-        cropped_img = img[:, left:right]
+        cropped_img = img[:, left_border:right_border]
+
 
         if target_width and target_height:
             cropped_img = cv2.resize(cropped_img, (target_width, target_height))
@@ -69,8 +70,7 @@ def ensure_output_folder_exists(output_folder, input_folder):
     return output_folder
 
 def process_image(filename, input_folder, output_folder, target_width, target_height):
-    # ensure_output_folder_exists(output_folder)
-    output_folder = ensure_output_folder_exists(output_folder, input_folder)  # Calling the function here
+    output_folder = ensure_output_folder_exists(output_folder, input_folder)
     file_extension = filename.lower().split('.')[-1]
     supported_formats = ['png', 'jpg', 'jpeg', 'bmp', 'dib', 'jp2', 'pbm', 'pgm', 'ppm', 'sr', 'ras', 'tiff', 'tif']
     if file_extension in supported_formats:
