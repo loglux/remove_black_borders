@@ -6,7 +6,7 @@ This Python script is designed to detect and crop the borders of images stored i
 
 Before using this script, you need to have the following dependencies installed:
 
-- OpenCV (cv2): A popular computer vision library for Python. You can install it using pip:
+- OpenCV (cv2):
 ```bash
 pip install opencv-python
 ```
