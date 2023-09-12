@@ -17,7 +17,7 @@ pip install opencv-python
 
 2. Place the images you want to process in a folder of your choice. You can set the input folder by modifying the `input_folder` variable in the script.
 
-3. Specify the output folder where the cropped images will be saved by modifying the `output_folder` variable in the script.
+3. Optionally, specify the output folder where the cropped images will be saved by modifying the output_folder variable in the script. If not provided, it defaults to a folder with the same name as the input folder but prefixed with "cropped_".
 
 4. Optionally, you can set target dimensions for the cropped images by modifying the `target_width` and `target_height` variables. If you want to keep the original dimensions, set these variables to `None`.
 
