@@ -30,7 +30,7 @@ python remove_black_borders.py
 
 ## Customization
 
-- The `white_threshold` parameter in the BorderAnalyzer class has been adjusted to 85 to enhance the detection of lighter-coloured borders. You can further customize this threshold to better suit your images' characteristics.
+- The `white_threshold` parameter in the BorderAnalyzer class has been set to 85 to enhance the detection of borders, offering improved separation between the actual content and the surrounding borders, even in images with intricate patterns or not very light details. 
 - In image processing, pixel values typically range from 0 to 255, where 0 represents black and 255 represents white. The `white_threshold` parameter is used to determine how light a pixel must be to be considered part of a white border. For example, `white_threshold` value closer to 255 would make the script more sensitive to white and very light colours.
 
 ## Example
