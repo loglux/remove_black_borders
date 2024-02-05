@@ -41,7 +41,7 @@ input_folder = "your_input_folder"
 output_folder = "your_output_folder"
 ```
 
-Please replace `"your_input_folder"` and `"your_output_folder"` with the actual folder paths you want to use. You can also provide additional information or customization instructions in the README as needed.
+Please replace `"your_input_folder"` and `"your_output_folder"` with the actual folder paths you want to use. 
 
 ## License
 This script is licensed under the MIT License.
