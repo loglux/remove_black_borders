@@ -26,11 +26,11 @@ pip install opencv-python
 python remove_black_borders.py
 ```
 
-The script will process all the PNG files in the input folder, detect and crop the borders, and save the cropped images in the output folder.
+- The script will now process all the supported files in the input folder, detect and crop borders from all sides, and save the cropped images in the output folder.
 
 ## Customization
 
-- You can customize the white threshold used for border detection by modifying the `white_threshold` parameter in the `BorderAnalyzer` class. This threshold determines what is considered "white" in the image.
+- The white_threshold parameter in the BorderAnalyzer class has been adjusted to 85 to enhance the detection of lighter-colored borders. You can further customize this threshold to better suit your images' characteristics.
 
 ## Example
 
