@@ -30,7 +30,7 @@ python remove_black_borders.py
 
 ## Customization
 
-- The white_threshold parameter in the BorderAnalyzer class has been adjusted to 85 to enhance the detection of lighter-colored borders. You can further customize this threshold to better suit your images' characteristics.
+- The `white_threshold` parameter in the BorderAnalyzer class has been adjusted to 85 to enhance the detection of lighter-colored borders. You can further customize this threshold to better suit your images' characteristics.
 
 ## Example
 
